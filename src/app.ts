@@ -1,6 +1,7 @@
 import express, {Express} from "express";
 import UserRoute from "./routes/users";
 import cors from 'cors';
+import ProductRoute from "./routes/products";
 
 class ExpressAPP {
     public app: Express;
@@ -22,7 +23,7 @@ class ExpressAPP {
     }
 
     private ProductRoute(): void {
-
+        this.app.use('/api/v1', new ProductRoute().router);
     }
 }
 
